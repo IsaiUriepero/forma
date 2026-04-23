@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FORMA — Premium Men's Grooming Products. Crafted for the modern man.">
+  <title>FORMA — Premium Men's Grooming</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], serif: ['Playfair Display', 'Georgia', 'serif'], mono: ['JetBrains Mono', 'monospace'] },
+          colors: {
+            surface: { DEFAULT: '#FFFFFF', 50: '#FAFAFA', 100: '#F5F5F5', 200: '#E5E5E5', 300: '#D4D4D4', 400: '#A3A3A3', 500: '#737373', 600: '#525252', 700: '#404040', 800: '#262626', 900: '#171717', 950: '#0A0A0A' },
+            accent: { DEFAULT: '#1B365D', light: '#2A5080', dark: '#0F1F38', gold: '#B8952E', bronze: '#8B6914' },
+            navy: { 50: '#F0F4F8', 100: '#D9E2EC', 200: '#BCCCDC', 300: '#9FB3C8', 400: '#829AB1', 500: '#627D98', 600: '#486581', 700: '#334E68', 800: '#243B53', 900: '#102A43' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* ==================== LIQUID GLASS SYSTEM ==================== */
+    .liquid-glass {
+      background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(248,250,252,0.75) 50%, rgba(241,245,249,0.65) 100%);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255,255,255,0.6);
+      box-shadow: 
+        0 8px 32px rgba(27,54,93,0.08),
+        0 2px 8px rgba(27,54,93,0.04),
+        inset 0 1px 0 rgba(255,255,255,0.9),
+        inset 0 -1px 0 rgba(27,54,93,0.05);
+    }
+    .liquid-glass-dark {
+      background: linear-gradient(135deg, rgba(10,10,10,0.82) 0%, rgba(23,23,23,0.78) 50%, rgba(38,38,38,0.72) 100%);
+      backdrop-filter: blur(32px) saturate(200%);
+      -webkit-backdrop-filter: blur(32px) saturate(200%);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 
+        0 12px 40px rgba(0,0,0,0.25),
+        0 4px 12px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.1),
+        inset 0 -1px 0 rgba(0,0,0,0.2);
+    }
+    .liquid-glass-subtle {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      border: 1px solid rgba(255,255,255,0.5);
+      box-shadow: 0 4px 16px rgba(27,54,93,0.06);
+    }
+    .liquid-glass-accent {
+      background: linear-gradient(135deg, rgba(27,54,93,0.92) 0%, rgba(15,31,56,0.88) 100%);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      border: 1px solid rgba(27,54,93,0.3);
+      box-shadow: 
+        0 12px 32px rgba(27,54,93,0.2),
+        0 4px 12px rgba(27,54,93,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.15),
+        inset 0 -1px 0 rgba(27,54,93,0.3);
+    }
+    /* Liquid button */
+    .liquid-btn {
+      position: relative;
+      background: linear-gradient(135deg, #1B365D 0%, #0F1F38 50%, #1B365D 100%);
+      border: 1px solid rgba(255,255,255,0.15);
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .liquid-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.05) 100%);
+      pointer-events: none;
+    }
+    .liquid-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s ease;
+    }
+    .liquid-btn:hover::after { left: 100%; }
+    .liquid-btn:hover {
+      box-shadow: 0 16px 40px rgba(27,54,93,0.3), 0 4px 12px rgba(27,54,93,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+    .liquid-btn-gold {
+      background: linear-gradient(135deg, #B8952E 0%, #8B6914 50%, #B8952E 100%);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .liquid-btn-gold:hover {
+      box-shadow: 0 16px 40px rgba(184,149,46,0.3), 0 4px 12px rgba(184,149,46,0.2);
+    }
+    /* Liquid card */
+    .liquid-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(248,250,252,0.8) 50%, rgba(241,245,249,0.7) 100%);
+      backdrop-filter: blur(20px) saturate(170%);
+      -webkit-backdrop-filter: blur(20px) saturate(170%);
+      border: 1px solid rgba(255,255,255,0.7);
+      box-shadow: 
+        0 12px 40px rgba(27,54,93,0.08),
+        0 4px 16px rgba(27,54,93,0.04),
+        inset 0 1px 0 rgba(255,255,255,1),
+        inset 0 -1px 2px rgba(27,54,93,0.04);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .liquid-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 
+        0 24px 48px rgba(27,54,93,0.12),
+        0 8px 24px rgba(27,54,93,0.08),
+        inset 0 1px 0 rgba(255,255,255,1),
+        inset 0 -1px 2px rgba(27,54,93,0.06);
+    }
+    /* Refraction effect on product cards */
+    .liquid-product {
+      background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(245,247,250,0.88) 40%, rgba(238,242,247,0.82) 100%);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255,255,255,0.8);
+      box-shadow: 
+        0 16px 48px rgba(27,54,93,0.06),
+        0 6px 20px rgba(27,54,93,0.04),
+        inset 0 1px 0 rgba(255,255,255,1),
+        inset 0 -2px 4px rgba(27,54,93,0.03);
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .liquid-product::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at 30% 20%, rgba(184,149,46,0.06) 0%, transparent 60%);
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    .liquid-product:hover::before { opacity: 0; }
+    .liquid-product:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 
+        0 32px 64px rgba(27,54,93,0.1),
+        0 12px 32px rgba(27,54,93,0.06),
+        inset 0 1px 0 rgba(255,255,255,1),
+        inset 0 -2px 4px rgba(27,54,93,0.04);
+    }
+    /* Dark liquid card */
+    .liquid-card-dark {
+      background: linear-gradient(145deg, rgba(10,10,10,0.88) 0%, rgba(23,23,23,0.82) 50%, rgba(38,38,38,0.76) 100%);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 
+        0 16px 48px rgba(0,0,0,0.2),
+        0 6px 20px rgba(0,0,0,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        inset 0 -1px 2px rgba(0,0,0,0.15);
+    }
+    /* Text gradients */
+    .text-gold { color: #B8952E; }
+    .gradient-navy { background: linear-gradient(135deg, #1B365D, #0F1F38); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-gold { background: linear-gradient(135deg, #D4AF37, #B8952E, #8B6914); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-charcoal { background: linear-gradient(135deg, #404040, #262626, #171717); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    /* Scroll animations */
+    .reveal { opacity:0; transform:translateY(50px); transition:all 0.9s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-left { opacity:0; transform:translateX(-60px); transition:all 0.9s cubic-bezier(0.16,1,0.3,1); }
+    .reveal-left.visible { opacity:1; transform:translateX(0); }
+    .reveal-right { opacity:0; transform:translateX(60px); transition:all 0.9s cubic-bezier(0.16,1,0.3,1); }
+    .reveal-right.visible { opacity:1; transform:translateX(0); }
+    .reveal-scale { opacity:0; transform:scale(0.92); transition:all 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .reveal-scale.visible { opacity:1; transform:scale(1); }
+    /* Page transition */
+    .page-in { animation: pageIn 0.6s cubic-bezier(0.16,1,0.3,1) forwards; }
+    @keyframes pageIn { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+    /* Image zoom */
+    .img-zoom { overflow:hidden; } .img-zoom img { transition:transform 0.7s cubic-bezier(0.16,1,0.3,1); } .img-zoom:hover img { transform:scale(1.06); }
+    /* Toast */
+    .toast-popup { position:fixed; bottom:32px; right:32px; z-index:9999; transform:translateY(120px); opacity:0; transition:all 0.5s cubic-bezier(0.16,1,0.3,1); }
+    .toast-popup.show { transform:translateY(0); opacity:1; }
+    /* Mobile menu */
+    .mobile-drawer { transform:translateX(100%); transition:transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+    .mobile-drawer.open { transform:translateX(0); }
+    /* Cart badge */
+    .cart-badge { position:absolute; top:-6px; right:-8px; background:linear-gradient(135deg, #B8952E, #8B6914); color:white; border-radius:50%; min-width:20px; height:20px; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; box-shadow:0 2px 8px rgba(184,149,46,0.3); }
+    /* Loader */
+    .loader { width:24px; height:24px; border:2px solid rgba(255,255,255,0.2); border-top-color:#B8952E; border-radius:50%; animation:spin 0.8s linear infinite; }
+    @keyframes spin { to{transform:rotate(360deg)} }
+    /* Prose styling */
+    .article-content h3 { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:#171717; margin:36px 0 16px; }
+    .article-content p { color:#525252; line-height:1.8; margin-bottom:20px; font-size:1.05rem; }
+    .article-content ul, .article-content ol { color:#525252; padding-left:28px; margin:16px 0; }
+    .article-content li { margin-bottom:10px; line-height:1.7; font-size:1.02rem; }
+    .article-content strong { color:#171717; font-weight:600; }
+    .article-content a { color:#1B365D; text-decoration:underline; text-decoration-color:rgba(27,54,93,0.3); transition:all 0.2s; }
+    .article-content a:hover { color:#B8952E; text-decoration-color:rgba(184,149,46,0.5); }
+    /* Code blocks */
+    pre { background:linear-gradient(135deg, #0A0A0A, #171717, #262626); border:1px solid rgba(255,255,255,0.08); border-radius:16px; overflow-x:auto; margin:28px 0; padding:20px; position:relative; box-shadow:0 12px 32px rgba(0,0,0,0.15); }
+    pre::before { content:''; position:absolute; top:0; left:0; right:0; height:36px; background:rgba(255,255,255,0.03); border-radius:16px 16px 0 0; }
+    pre code { font-family:'JetBrains Mono',monospace; font-size:13px; color:#93C5FD; line-height:1.8; }
+    /* Tables */
+    .content-table { width:100%; border-collapse:separate; border-spacing:0; border-radius:16px; overflow:hidden; margin:28px 0; box-shadow:0 8px 24px rgba(0,0,0,0.06); }
+    .content-table thead th { background:linear-gradient(135deg, #1B365D, #0F1F38); color:white; padding:16px 24px; font-weight:600; font-size:14px; letter-spacing:0.02em; }
+    .content-table tbody td { padding:16px 24px; border-bottom:1px solid #E5E5E5; color:#525252; }
+    .content-table tbody tr { background:white; transition:background 0.2s; }
+    .content-table tbody tr:hover { background:#F0F4F8; }
+    /* Blockquotes */
+    blockquote { position:relative; padding:28px 32px; margin:32px 0; background:linear-gradient(135deg, #F8FAFC, #F0F4F8); border-left:4px solid #B8952E; border-radius:0 16px 16px 0; font-style:italic; color:#404040; box-shadow:0 4px 16px rgba(27,54,93,0.04); }
+    blockquote::before { content:'"'; position:absolute; top:-12px; left:20px; font-size:56px; font-family:'Playfair Display',serif; color:rgba(184,149,46,0.2); line-height:1; }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width:8px; }
+    ::-webkit-scrollbar-track { background:#F5F5F5; }
+    ::-webkit-scrollbar-thumb { background:linear-gradient(180deg, #B8952E, #1B365D); border-radius:4px; }
+    ::-webkit-scrollbar-thumb:hover { background:linear-gradient(180deg, #D4AF37, #2A5080); }
+    /* Line clamp */
+    .line-clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .line-clamp-3 { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+    /* Hero background */
+    .hero-bg { background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 40%, #F0F4F8 100%); }
+    /* Shimmer animation */
+    @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+    .shimmer { background:linear-gradient(90deg, transparent 0%, rgba(184,149,46,0.1) 50%, transparent 100%); background-size:200% 100%; animation:shimmer 3s infinite; }
+    /* Nav link underline */
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:50%; width:0; height:2px; background:#B8952E; transition:all 0.3s ease; transform:translateX(-50%); }
+    .nav-link:hover::after { width:100%; }
+  </style>
+</head>
+<body class="bg-white text-surface-900 font-sans antialiased">
+
+  <!-- Toast -->
+  <div id="toast" class="toast-popup">
+    <div class="liquid-glass rounded-2xl px-6 py-4 flex items-center gap-3 shadow-xl">
+      <span class="text-xl" id="toastIcon">✓</span>
+      <span id="toastMsg" class="text-sm font-medium text-surface-900"></span>
+    </div>
+  </div>
+
+  <!-- Mobile Overlay -->
+  <div id="mobileOverlay" class="fixed inset-0 bg-surface-900/40 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity" onclick="closeMobileMenu()"></div>
+
+  <!-- Mobile Drawer -->
+  <div id="mobileMenu" class="mobile-drawer fixed top-0 right-0 h-full w-80 z-50 bg-white p-8 flex flex-col shadow-2xl">
+    <button onclick="closeMobileMenu()" class="self-end text-surface-500 hover:text-surface-900 transition p-2 mb-8">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <nav class="flex flex-col gap-1 flex-1">
+      <a href="#/" onclick="navigate('home');closeMobileMenu()" class="px-4 py-3 rounded-xl hover:bg-surface-100 transition text-lg font-medium text-surface-800">Home</a>
+      <a href="#/products" onclick="navigate('products');closeMobileMenu()" class="px-4 py-3 rounded-xl hover:bg-surface-100 transition text-lg font-medium text-surface-800">Products</a>
+      <a href="#/blog" onclick="navigate('blog');closeMobileMenu()" class="px-4 py-3 rounded-xl hover:bg-surface-100 transition text-lg font-medium text-surface-800">Journal</a>
+      <a href="#/about" onclick="navigate('about');closeMobileMenu()" class="px-4 py-3 rounded-xl hover:bg-surface-100 transition text-lg font-medium text-surface-800">About</a>
+      <a href="#/contact" onclick="navigate('contact');closeMobileMenu()" class="px-4 py-3 rounded-xl hover:bg-surface-100 transition text-lg font-medium text-surface-800">Contact</a>
+    </nav>
+    <div class="pt-6 border-t border-surface-200">
+      <div class="flex gap-4">
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-100 flex items-center justify-center hover:bg-surface-200 transition">
+          <svg class="w-4 h-4 text-surface-600" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-100 flex items-center justify-center hover:bg-surface-200 transition">
+          <svg class="w-4 h-4 text-surface-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-30 transition-all duration-500 bg-white/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#/" onclick="navigate('home')" class="flex items-center gap-3 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-lg shadow-accent/20">
+            <span class="text-white font-bold text-sm tracking-wider">F</span>
+          </div>
+          <span class="text-xl font-bold tracking-tight text-surface-900">FORMA</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-1">
+          <a href="#/" onclick="navigate('home')" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-surface-600 hover:text-surface-900 transition">Home</a>
+          <a href="#/products" onclick="navigate('products')" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-surface-600 hover:text-surface-900 transition">Products</a>
+          <a href="#/blog" onclick="navigate('blog')" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-surface-600 hover:text-surface-900 transition">Journal</a>
+          <a href="#/about" onclick="navigate('about')" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-surface-600 hover:text-surface-900 transition">About</a>
+          <a href="#/contact" onclick="navigate('contact')" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-surface-600 hover:text-surface-900 transition">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button onclick="navigate('cart')" class="relative p-2 rounded-lg hover:bg-surface-100 transition group">
+            <svg class="w-6 h-6 text-surface-600 group-hover:text-surface-900 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            <span id="cartCount" class="cart-badge hidden">0</span>
+          </button>
+          <button onclick="openMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-surface-100 transition">
+            <svg class="w-6 h-6 text-surface-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="app"></main>
+
+  <!-- Footer -->
+  <footer class="relative bg-surface-50 border-t border-surface-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="lg:col-span-1">
+          <a href="#/" onclick="navigate('home')" class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center">
+              <span class="text-white font-bold text-sm">F</span>
+            </div>
+            <span class="text-xl font-bold text-surface-900">FORMA</span>
+          </a>
+          <p class="text-surface-500 text-sm leading-relaxed mb-6">Premium grooming essentials crafted for the modern man. Elevate your daily ritual.</p>
+          <div class="flex gap-3">
+            <a href="#" class="w-9 h-9 rounded-full bg-surface-100 flex items-center justify-center hover:bg-surface-200 transition">
+              <svg class="w-4 h-4 text-surface-500" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-surface-100 flex items-center justify-center hover:bg-surface-200 transition">
+              <svg class="w-4 h-4 text-surface-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-surface-400 mb-4">Shop</h4>
+          <ul class="space-y-3">
+            <li><a href="#/products" onclick="navigate('products')" class="text-surface-500 hover:text-surface-900 transition text-sm">All Products</a></li>
+            <li><a href="#/products" onclick="navigate('products')" class="text-surface-500 hover:text-surface-900 transition text-sm">Colognes</a></li>
+            <li><a href="#/products" onclick="navigate('products')" class="text-surface-500 hover:text-surface-900 transition text-sm">Hair Care</a></li>
+            <li><a href="#/products" onclick="navigate('products')" class="text-surface-500 hover:text-surface-900 transition text-sm">Body Care</a></li>
+            <li><a href="#/products" onclick="navigate('products')" class="text-surface-500 hover:text-surface-900 transition text-sm">Face Care</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-surface-400 mb-4">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#/about" onclick="navigate('about')" class="text-surface-500 hover:text-surface-900 transition text-sm">About Us</a></li>
+            <li><a href="#/contact" onclick="navigate('contact')" class="text-surface-500 hover:text-surface-900 transition text-sm">Contact</a></li>
+            <li><a href="#/blog" onclick="navigate('blog')" class="text-surface-500 hover:text-surface-900 transition text-sm">Journal</a></li>
+            <li><a href="#/privacy" onclick="navigate('privacy')" class="text-surface-500 hover:text-surface-900 transition text-sm">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-surface-400 mb-4">Newsletter</h4>
+          <p class="text-surface-500 text-sm mb-4">Grooming tips & exclusive offers.</p>
+          <form onsubmit="handleNewsletter(event)" class="flex gap-2">
+            <input type="email" placeholder="your@email.com" required class="input input-bordered bg-white border-surface-200 rounded-xl px-4 py-2.5 text-sm text-surface-900 placeholder-surface-400 focus:outline-none focus:border-accent transition flex-1">
+            <button type="submit" class="liquid-btn text-white px-5 py-2.5 rounded-xl text-sm font-medium">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="border-t border-surface-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-surface-400 text-sm">&copy; 2024 FORMA. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#/privacy" onclick="navigate('privacy')" class="text-surface-400 hover:text-surface-900 transition text-sm">Privacy</a>
+          <a href="#" class="text-surface-400 hover:text-surface-900 transition text-sm">Terms</a>
+          <a href="#" class="text-surface-400 hover:text-surface-900 transition text-sm">Shipping</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ==================== DATA ====================
+    const products = [
+      { id:1, name:'Noir Essence Cologne', cat:'cologne', price:89, rating:4.8, reviews:124, image:'https://images.unsplash.com/photo-1594035910387-fea081e65e42?w=800&h=800&fit=crop', desc:'A sophisticated blend of dark amber, vetiver, and sandalwood.', longDesc:'Noir Essence captures the essence of refined masculinity in a bottle. The top notes of bergamot and black pepper give way to a heart of dark rose and cedar, resting on a warm base of amber and musk.', features:['100ml / 3.4 fl oz','EDP concentration','Long-lasting 8-10 hours','Premium glass bottle'], ingredients:'Alcohol Denat., Fragrance (Parfum), Aqua, Limonene, Linalool, Coumarin', badges:['Bestseller','New'] },
+      { id:2, name:'Matte Texture Hair Cream', cat:'hair', price:34, rating:4.6, reviews:89, image:'https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=800&h=800&fit=crop', desc:'Medium hold with a natural matte finish. Texture and definition.', longDesc:'Our Matte Texture Hair Cream delivers the perfect balance of hold and flexibility. Infused with argan oil and vitamin E, it nourishes your hair while providing a modern, textured look.', features:['75ml jar','Matte finish','Medium hold','Argan oil infused','Re-wettable'], ingredients:'Water, Cetearyl Alcohol, PVP, Argania Spinosa Kernel Oil, Tocopherol, Parfum', badges:['Popular'] },
+      { id:3, name:'Golden Hour Body Oil', cat:'body', price:48, rating:4.9, reviews:156, image:'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&h=800&fit=crop', desc:'A luxurious blend of jojoba, argan, and vitamin E oils.', longDesc:'Golden Hour Body Oil is designed for the man who values both function and aesthetics. This fast-absorbing formula leaves skin deeply moisturized with a subtle, non-greasy sheen.', features:['50ml amber glass','Dropper applicator','100% natural oils','Subtle gold shimmer','Fast absorbing'], ingredients:'Simmondsia Chinensis Seed Oil, Argania Spinosa Kernel Oil, Vitamin E, Parfum, Mica', badges:['Premium'] },
+      { id:4, name:'Timber Beard Oil', cat:'body', price:38, rating:4.7, reviews:201, image:'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&h=800&fit=crop', desc:'Nourishes beard hair with a blend of natural oils and woodsy fragrance.', longDesc:'Timber Beard Oil is crafted for bearded men who demand the best. Our signature blend of grapeseed, hemp, and sweet almond oils conditions every strand while the essential oil blend of cedarwood, sandalwood, and eucalyptus provides a grounding scent.', features:['30ml dark glass','Wooden cap','100% natural','Anti-itch formula','Cedar & sandalwood scent'], ingredients:'Grapeseed Oil, Hemp Seed Oil, Sweet Almond Oil, Cedarwood Oil, Sandalwood Oil, Eucalyptus Oil', badges:['Bestseller'] },
+      { id:5, name:'Hydra-Boost Moisturizer', cat:'face', price:56, rating:4.5, reviews:78, image:'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&h=800&fit=crop', desc:'Lightweight face cream with hyaluronic acid and niacinamide.', longDesc:'Hydra-Boost Moisturizer is engineered for men\'s skin. The combination of hyaluronic acid for deep hydration, niacinamide for oil control, and SPF 30 for sun protection makes this the only moisturizer you\'ll need.', features:['50ml frosted glass','SPF 30','Hyaluronic acid','Niacinamide','Oil-free formula'], ingredients:'Water, Hyaluronic Acid, Niacinamide, Glycerin, Squalane, Titanium Dioxide, Zinc Oxide', badges:['New'] },
+      { id:6, name:'Charcoal Deep Clean Wash', cat:'face', price:28, rating:4.4, reviews:167, image:'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&h=800&fit=crop', desc:'Activated charcoal draws out impurities while green tea soothes.', longDesc:'Our Charcoal Deep Clean Face Wash combines the detoxifying power of activated charcoal with the antioxidant benefits of green tea. This gentle yet effective formula removes dirt and excess oil.', features:['150ml tube','Activated charcoal','Green tea extract','pH balanced','All skin types'], ingredients:'Water, Activated Charcoal, Green Tea Extract, Glycerin, Cocamidopropyl Betaine', badges:[] },
+      { id:7, name:'Arctic Frost Cologne', cat:'cologne', price:95, rating:4.9, reviews:92, image:'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&h=800&fit=crop', desc:'Crisp and invigorating notes of sea salt, white tea, and driftwood.', longDesc:'Arctic Frost captures the raw energy of the northern coast. Opening with a burst of sea salt and bergamot, the fragrance evolves into a heart of white tea and sage.', features:['100ml / 3.4 fl oz','EDP concentration','Fresh aquatic profile','12-hour longevity'], ingredients:'Alcohol Denat., Fragrance (Parfum), Aqua, Limonene, Linalool, Citral', badges:['Limited Edition'] },
+      { id:8, name:'Clay Styling Paste', cat:'hair', price:32, rating:4.3, reviews:114, image:'https://images.unsplash.com/photo-1585238342024-78d387f4132e?w=800&h=800&fit=crop', desc:'Strong hold styling paste with natural kaolin clay.', longDesc:'Our Clay Styling Paste is the go-to product for men who need reliable hold with a natural finish. The blend of kaolin clay and beeswax provides strong hold while adding thickness and texture.', features:['100g tin','Kaolin clay','Strong hold','Low shine','Water soluble'], ingredients:'Water, Kaolin Clay, Beeswax, PVP, Cetearyl Alcohol, Tocopherol, Parfum', badges:[] },
+      { id:9, name:'Rosewood Shave Cream', cat:'face', price:32, rating:4.6, reviews:65, image:'https://images.unsplash.com/photo-1581492498013-89d725e7f8bc?w=800&h=800&fit=crop', desc:'Rich, lubricating shave cream with rosewood oil for a smooth shave.', longDesc:'Rosewood Shave Cream provides the ultimate shaving experience. The rich, creamy formula creates a protective barrier between blade and skin, while rosewood oil soothes and prevents irritation.', features:['120ml tube','Rosewood oil','Rich lather','Anti-irritation','Sensitive skin friendly'], ingredients:'Water, Glycerin, Stearic Acid, Rosewood Oil, Aloe Vera, Tocopherol', badges:[] },
+      { id:10, name:'Ocean Breeze Body Wash', cat:'body', price:24, rating:4.5, reviews:143, image:'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&h=800&fit=crop', desc:'Refreshing body wash with sea minerals and eucalyptus.', longDesc:'Ocean Breeze Body Wash combines the mineral-rich essence of sea water with the clarifying power of eucalyptus. This daily wash cleanses without stripping.', features:['250ml bottle','Sea minerals','Eucalyptus','pH balanced','Daily use'], ingredients:'Water, Sea Salt, Eucalyptus Oil, Cocamidopropyl Betaine, Glycerin', badges:['Value Pick'] },
+      { id:11, name:'Midnight Musk Cologne', cat:'cologne', price:110, rating:4.9, reviews:48, image:'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=800&h=800&fit=crop', desc:'Deep, mysterious musk with notes of oud, leather, and dark vanilla.', longDesc:'Midnight Musk is for the man who commands a room without saying a word. This opulent fragrance opens with saffron and cardamom, reveals a heart of oud and leather, and rests on a luxurious base of dark vanilla.', features:['100ml crystal bottle','Parfum concentration','14+ hours longevity','Oud & leather notes'], ingredients:'Alcohol Denat., Fragrance (Parfum), Aqua, Saffron Extract, Oud Oil, Vanilla Extract', badges:['Luxury'] },
+      { id:12, name:'Vitamin C Serum', cat:'face', price:48, rating:4.7, reviews:89, image:'https://images.unsplash.com/photo-1617897903246-719242758050?w=800&h=800&fit=crop', desc:'Potent vitamin C serum that brightens, firms, and protects skin.', longDesc:'Vitamin C Serum delivers a powerful 20% concentration of L-ascorbic acid combined with ferulic acid and vitamin E for maximum antioxidant protection.', features:['30ml dark glass','20% Vitamin C','Ferulic acid','Antioxidant complex','Dropper bottle'], ingredients:'L-Ascorbic Acid, Ferulic Acid, Vitamin E, Hyaluronic Acid, Aloe Vera', badges:['Editor Choice'] }
+    ];
+
+    const blogPosts = [
+      { id:1, title:'The Complete Guide to Building a Morning Grooming Routine', slug:'morning-grooming-routine', date:'2024-01-15', author:'Marcus Chen', category:'Guide', readTime:'8 min', image:'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&h=500&fit=crop', excerpt:'Transform your mornings with this step-by-step guide to a grooming routine that takes just 10 minutes.', content:`<h3>Start with a Clean Canvas</h3><p>A great day starts with a great routine. Most of us spend more time scrolling through our phones in the morning than we do on actual grooming. It's time to change that.</p><blockquote>"The difference between a good day and a great day often comes down to how you start it. A proper grooming routine sets the tone for everything that follows."</blockquote><h3>Step 1: Cleanse Your Face</h3><p>Start with our <strong>Charcoal Deep Clean Face Wash</strong>. Wet your face with lukewarm water, apply a small amount, and massage in circular motions for 30 seconds. Rinse thoroughly and pat dry.</p><h3>Step 2: Hydrate & Protect</h3><p>Apply a few drops of our <strong>Vitamin C Serum</strong> followed by <strong>Hydra-Boost Moisturizer</strong> with SPF 30. Layer serums before moisturizers for maximum absorption.</p><h3>Step 3: Style Your Hair</h3><p>Work a pea-sized amount of <strong>Matte Texture Hair Cream</strong> through damp or dry hair. Start at the roots and work outward for even distribution.</p><h3>Step 4: Signature Scent</h3><p>Apply 2-3 sprays of your chosen cologne to pulse points — wrists, neck, and behind the ears. Less is more.</p>` },
+      { id:2, title:'How to Choose the Right Cologne for Your Personality', slug:'choose-cologne-personality', date:'2024-01-22', author:'James Hartley', category:'Style', readTime:'6 min', image:'https://images.unsplash.com/photo-1594035910387-fea081e65e42?w=800&h=500&fit=crop', excerpt:'Your fragrance says more about you than any outfit. Learn to match scent profiles with your personal style.', content:`<p>Your choice of cologne is one of the most personal decisions you make daily. It's an invisible accessory that speaks volumes before you even say a word.</p><h3>Understanding Fragrance Families</h3><p>Fragrances are broadly categorized into several families, each with distinct characteristics:</p><table class="content-table"><thead><tr><th>Family</th><th>Notes</th><th>Best For</th></tr></thead><tbody><tr><td>Woody</td><td>Cedar, sandalwood, vetiver</td><td>Professional settings</td></tr><tr><td>Fresh/Aquatic</td><td>Sea salt, citrus, green tea</td><td>Daytime & summer</td></tr><tr><td>Oriental</td><td>Amber, vanilla, spices</td><td>Evening & winter</td></tr><tr><td>Aromatic</td><td>Lavender, rosemary, herbs</td><td>Casual everyday</td></tr></tbody></table><blockquote>"A well-chosen fragrance should complement your personality, not mask it. The best cologne is the one that feels like a natural extension of who you are."</blockquote><h3>Matching Scent to Occasion</h3><p>For the office, opt for lighter, fresher scents like our <strong>Arctic Frost Cologne</strong> — crisp, clean, and professional.</p><p>For evenings out, reach for something richer like <strong>Noir Essence</strong> with its dark amber and sandalwood base.</p><h3>Pro Tips</h3><ul><li>Always test cologne on your skin before buying — fragrances react differently to each person's chemistry</li><li>Apply to pulse points where body heat helps diffuse the scent</li><li>Don't rub your wrists together after applying — this breaks down fragrance molecules</li><li>Store colognes away from direct sunlight and heat</li></ul>` },
+      { id:3, title:'The Science Behind Natural Body Oils', slug:'science-body-oils', date:'2024-02-01', author:'Dr. Alex Rivera', category:'Education', readTime:'10 min', image:'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&h=500&fit=crop', excerpt:'Dermatological science behind body oils and why they should be non-negotiable in your routine.', content:`<p>Many men think body oils are only for skincare enthusiasts. This couldn't be further from the truth. Understanding the science behind body oils will change how you think about skin care forever.</p><h3>Your Skin Barrier: The First Line of Defense</h3><p>Your skin's barrier function protects against environmental damage, prevents moisture loss, and keeps harmful bacteria out. Harsh soaps, hot showers, and environmental factors constantly compromise this barrier.</p><blockquote>"Body oils don't just sit on the surface — they integrate with your skin's natural lipid barrier, reinforcing its protective capabilities at a cellular level."</blockquote><h3>How Body Oils Work</h3><ol><li><strong>Penetration:</strong> Small molecular structure allows oils to penetrate the stratum corneum</li><li><strong>Integration:</strong> Fatty acids integrate with existing skin lipids, strengthening the barrier</li><li><strong>Protection:</strong> Creates a protective film that locks in moisture</li><li><strong>Nourishment:</strong> Vitamins and antioxidants provide cellular nourishment</li></ol><h3>Key Ingredients</h3><table class="content-table"><thead><tr><th>Oil</th><th>Key Benefit</th><th>Best For</th></tr></thead><tbody><tr><td>Jojoba Oil</td><td>Mimics skin sebum</td><td>All skin types</td></tr><tr><td>Argan Oil</td><td>Rich in vitamin E</td><td>Dry/mature skin</td></tr><tr><td>Grapeseed Oil</td><td>Lightweight, fast-absorbing</td><td>Oily/acne-prone</td></tr><tr><td>Hemp Seed Oil</td><td>Anti-inflammatory</td><td>Sensitive skin</td></tr></tbody></table>` },
+      { id:4, title:'Beard Maintenance 101: From Stubble to Statement', slug:'beard-maintenance-101', date:'2024-02-10', author:'Marcus Chen', category:'Guide', readTime:'7 min', image:'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&h=500&fit=crop', excerpt:'Master the art of beard care covering everything from daily maintenance to shaping techniques.', content:`<p>A well-maintained beard is a mark of distinction. But achieving that polished look requires intention, technique, and the right products.</p><h3>The Foundation: Daily Care</h3><ol><li><strong>Wash 2-3 times per week</strong> — Use a beard-specific wash</li><li><strong>Condition daily</strong> — Apply beard oil after washing while hair is slightly damp</li><li><strong>Brush regularly</strong> — Use a boar bristle brush</li><li><strong>Trim strategically</strong> — Remove split ends every 1-2 weeks</li></ol><blockquote>"Your beard oil should be applied to both the beard hair AND the skin beneath. Most beard itch comes from dry skin, not dry hair."</blockquote><h3>Choosing Your Style</h3><ul><li><strong>Round face:</strong> Longer beard with shorter sides to elongate</li><li><strong>Square face:</strong> Full, rounded beard softens strong jawlines</li><li><strong>Oval face:</strong> Almost any style works — experiment!</li><li><strong>Long face:</strong> Keep sides fuller and bottom shorter</li></ul>` },
+      { id:5, title:'Hair Styling Products: A Beginner\'s Guide', slug:'hair-styling-products-guide', date:'2024-02-18', author:'James Hartley', category:'Style', readTime:'5 min', image:'https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=800&h=500&fit=crop', excerpt:'Creams, pastes, waxes, and pomades — learn the differences and choose the right one.', content:`<p>Walk into any grooming store, and you'll be overwhelmed: cream, paste, wax, pomade, clay, gel. What's the difference?</p><table class="content-table"><thead><tr><th>Product</th><th>Hold</th><th>Shine</th><th>Best For</th></tr></thead><tbody><tr><td>Hair Cream</td><td>Light-Medium</td><td>Low-Natural</td><td>Everyday styling</td></tr><tr><td>Styling Paste</td><td>Strong</td><td>Low</td><td>Textured looks</td></tr><tr><td>Pomade</td><td>Medium</td><td>High</td><td>Classic slick styles</td></tr><tr><td>Hair Wax</td><td>Strong</td><td>Medium</td><td>Defined, piecey looks</td></tr><tr><td>Clay</td><td>Strong</td><td>Matte</td><td>Volume and texture</td></tr></tbody></table><blockquote>"The best hair product isn't the strongest one — it's the one that gives you the look you want while keeping your hair healthy."</blockquote><h3>How to Apply</h3><ol><li>Start with a small amount — less is more</li><li>Warm the product between your palms</li><li>Apply evenly from roots to tips</li><li>Style with your fingers or a comb</li><li>Add more if needed (but start small!)</li></ol>` },
+      { id:6, title:'Grooming & Mental Well-being', slug:'grooming-mental-wellbeing', date:'2024-02-25', author:'Dr. Alex Rivera', category:'Education', readTime:'8 min', image:'https://images.unsplash.com/photo-1581492498013-89d725e7f8bc?w=800&h=500&fit=crop', excerpt:'Research shows grooming routines significantly impact mental health, confidence, and well-being.', content:`<p>Research has increasingly highlighted the connection between personal grooming and mental well-being. What was once dismissed as vanity is now recognized as legitimate self-care.</p><h3>The Psychology of Self-Care</h3><p>When you take time to groom yourself, you're sending a powerful message to your brain: "I matter." This triggers a cascade of positive effects:</p><ul><li><strong>Increased confidence:</strong> Looking good makes you feel good, creating a positive feedback loop</li><li><strong>Reduced stress:</strong> The ritual of grooming activates the parasympathetic nervous system</li><li><strong>Improved mood:</strong> The sensory experience of quality products can trigger dopamine release</li><li><strong>Better social interactions:</strong> When you feel good about your appearance, you engage more confidently</li></ul><blockquote>"Self-care isn't selfish. It's the foundation upon which you build your ability to care for others. When you invest in yourself, everyone around you benefits."</blockquote><h3>Building a Mindful Routine</h3><p>Instead of rushing through your routine, try to be present. Notice the texture of the products. Appreciate the scents. Feel the sensation of clean skin. These small moments transform a mundane task into a meditative practice.</p>` },
+      { id:7, title:'The Art of Layering Fragrances', slug:'layering-fragrances', date:'2024-03-05', author:'Sophia Laurent', category:'Style', readTime:'7 min', image:'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&h=500&fit=crop', excerpt:'Master the sophisticated technique of fragrance layering to create your signature scent.', content:`<p>Fragrance layering is the art of combining multiple scents to create a unique, personalized fragrance profile. It's how the discerning man crafts a scent that's truly his own.</p><h3>The Layering Formula</h3><p>Think of your fragrance application in three layers:</p><ol><li><strong>Base layer:</strong> Scented body wash and body lotion</li><li><strong>Core layer:</strong> Your chosen cologne or perfume</li><li><strong>Accent layer:</strong> A complementary scent on pulse points</li></ol><h3>Rules of Layering</h3><ul><li>Start with matching scents from the same line for safety</li><li>Keep the total number of scents to 2-3 maximum</li><li>Let each layer dry before applying the next</li><li>Apply lighter scents first, heavier scents last</li></ul><blockquote>"The best layered fragrance is one where people can't identify individual notes — they just know you smell incredible."</blockquote>` },
+      { id:8, title:'Winter Skincare: Essential Tips for Men', slug:'winter-skincare-tips', date:'2024-03-12', author:'Dr. Alex Rivera', category:'Guide', readTime:'6 min', image:'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&h=500&fit=crop', excerpt:'Cold weather wreaks havoc on skin. Here\'s how to protect and nourish your skin during winter.', content:`<p>Winter is the hardest season on skin. Cold temperatures, dry indoor heating, and harsh winds strip moisture from your skin faster than any other time of year.</p><h3>Winter Skincare Essentials</h3><ul><li><strong>Gentle cleanser:</strong> Switch to a cream-based cleanser that won't strip natural oils</li><li><strong>Heavier moisturizer:</strong> Upgrade from a lightweight lotion to a rich cream</li><li><strong>Lip balm:</strong> Don't forget your lips — they crack easily in winter</li><li><strong>Hand cream:</strong> Keep a tube in every coat pocket and at your desk</li><li><strong>Humidifier:</strong> Add moisture to your indoor air while you sleep</li></ul><blockquote>"Winter skincare isn't about adding more steps — it's about making each step more effective and hydrating."</blockquote><p>Our <strong>Hydra-Boost Moisturizer</strong> and <strong>Golden Hour Body Oil</strong> are perfect companions for winter skin protection.</p>` },
+      { id:9, title:'The Psychology of First Impressions', slug:'psychology-first-impressions', date:'2024-03-20', author:'James Hartley', category:'Education', readTime:'9 min', image:'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=800&h=500&fit=crop', excerpt:'You have 7 seconds to make a first impression. Here\'s how grooming gives you the edge.', content:`<p>Research shows that people form their first impression of you within 7 seconds. Within those brief moments, your appearance, posture, and even your scent play a critical role in how you're perceived.</p><h3>The 7-Second Breakdown</h3><table class="content-table"><thead><tr><th>Factor</th><th>Impact</th><th>Time to Notice</th></tr></thead><tbody><tr><td>Posture & body language</td><td>55%</td><td>0-2 seconds</td></tr><tr><td>Grooming & appearance</td><td>38%</td><td>2-4 seconds</td></tr><tr><td>Scent</td><td>25%</td><td>3-7 seconds</td></tr><tr><td>Voice & speech</td><td>7%</td><td>After 7 seconds</td></tr></tbody></table><p>Grooming isn't just about looking good — it's a form of non-verbal communication that signals self-respect, attention to detail, and social awareness.</p><blockquote>"People may forget what you said, but they'll never forget how you made them feel. Good grooming helps you make them feel good."</blockquote>` }
+    ];
+
+    // ==================== STATE ====================
+    let cart = [];
+
+    // ==================== NAVIGATION ====================
+    function navigate(page, data = {}) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => { renderPage(page, data); initScrollAnimations(); }, 150);
+    }
+
+    function renderPage(page, data = {}) {
+      const app = document.getElementById('app');
+      switch(page) {
+        case 'home': app.innerHTML = renderHome(); break;
+        case 'products': app.innerHTML = renderProducts(data.cat || 'all'); break;
+        case 'product': app.innerHTML = renderProductDetail(data.id); break;
+        case 'blog': app.innerHTML = renderBlog(data.page || 1); break;
+        case 'article': app.innerHTML = renderArticle(data.id); break;
+        case 'contact': app.innerHTML = renderContact(); break;
+        case 'about': app.innerHTML = renderAbout(); break;
+        case 'privacy': app.innerHTML = renderPrivacy(); break;
+        case 'cart': app.innerHTML = renderCart(); break;
+        case '404': app.innerHTML = render404(); break;
+        default: app.innerHTML = renderHome();
+      }
+      initScrollAnimations();
+    }
+
+    // ==================== PRODUCT CARD (LARGE) ====================
+    function renderProductCard(p) {
+      return `
+        <div class="reveal group">
+          <div class="liquid-product relative rounded-3xl overflow-hidden">
+            <a href="#/product/${p.id}" onclick="navigate('product',{id:${p.id}})" class="block">
+              <div class="aspect-[4/5] bg-gradient-to-b from-surface-50 to-white overflow-hidden">
+                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover p-6 mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" loading="lazy">
+              </div>
+            </a>
+            <div class="p-6 pt-4">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex gap-2 flex-wrap">
+                  ${p.badges.map(b => `<span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold tracking-wide uppercase bg-surface-100 text-surface-600">${b}</span>`).join('')}
+                </div>
+                <div class="flex items-center gap-1 text-accent-gold">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <span class="text-xs font-medium text-surface-500">${p.rating}</span>
+                </div>
+              </div>
+              <p class="text-[11px] uppercase tracking-widest text-surface-400 mb-1">${p.cat}</p>
+              <a href="#/product/${p.id}" onclick="navigate('product',{id:${p.id}})" class="block">
+                <h3 class="font-serif text-lg font-bold text-surface-900 mb-1 group-hover:text-accent transition-colors">${p.name}</h3>
+              </a>
+              <p class="text-sm text-surface-500 mb-4 line-clamp-2">${p.desc}</p>
+              <div class="flex items-center justify-between pt-4 border-t border-surface-100">
+                <p class="text-2xl font-bold gradient-navy">$${p.price}</p>
+                <button onclick="addToCart(${p.id})" class="liquid-btn text-white px-5 py-2.5 rounded-xl text-sm font-medium">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== HOME PAGE ====================
+    function renderHome() {
+      const featured = products.slice(0, 4);
+      return `
+        <!-- Hero -->
+        <section class="relative hero-bg min-h-screen flex items-center overflow-hidden">
+          <div class="absolute inset-0">
+            <div class="absolute top-20 right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 left-20 w-72 h-72 bg-accent-gold/5 rounded-full blur-3xl"></div>
+          </div>
+          <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 pb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[80vh]">
+              <div class="max-w-xl">
+                <div class="reveal">
+                  <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-subtle mb-8">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-xs font-medium text-surface-600">New Collection 2024</span>
+                  </div>
+                </div>
+                <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-6 reveal">
+                  Elevate Your<br><span class="gradient-gold">Daily Ritual</span>
+                </h1>
+                <p class="text-surface-500 text-lg md:text-xl mb-10 max-w-lg leading-relaxed reveal">
+                  Premium grooming essentials crafted for the modern man. Science-backed formulas, timeless design.
+                </p>
+                <div class="flex flex-wrap gap-4 reveal">
+                  <a href="#/products" onclick="navigate('products')" class="liquid-btn text-white px-8 py-4 rounded-2xl text-base font-medium inline-flex items-center gap-3">
+                    Shop Collection
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                  </a>
+                  <a href="#/blog" onclick="navigate('blog')" class="btn btn-outline border-surface-200 text-surface-700 hover:border-surface-400 hover:bg-surface-50 rounded-2xl text-base font-medium px-8">
+                    Read Journal
+                  </a>
+                </div>
+              </div>
+              <div class="hidden lg:flex justify-center reveal-right">
+                <div class="relative">
+                  <div class="w-80 h-96 rounded-3xl overflow-hidden liquid-glass p-3">
+                    <img src="https://images.unsplash.com/photo-1594035910387-fea081e65e42?w=500&h=600&fit=crop" alt="Featured product" class="w-full h-full object-cover rounded-2xl">
+                  </div>
+                  <div class="absolute -bottom-6 -left-6 liquid-glass rounded-2xl p-4 shadow-xl">
+                    <p class="text-xs text-surface-400 uppercase tracking-wider">Starting at</p>
+                    <p class="text-2xl font-bold gradient-navy">$24</p>
+                  </div>
+                  <div class="absolute -top-4 -right-4 liquid-glass rounded-full p-3 shadow-xl">
+                    <div class="flex items-center gap-1">
+                      <svg class="w-4 h-4 text-accent-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                      <span class="text-sm font-bold text-surface-900">4.8</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="py-16 bg-surface-50 border-y border-surface-100">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div class="reveal"><p class="text-3xl md:text-4xl font-bold gradient-gold">50K+</p><p class="text-surface-400 text-sm mt-2">Happy Customers</p></div>
+              <div class="reveal"><p class="text-3xl md:text-4xl font-bold gradient-navy">100%</p><p class="text-surface-400 text-sm mt-2">Natural Ingredients</p></div>
+              <div class="reveal"><p class="text-3xl md:text-4xl font-bold gradient-gold">4.8</p><p class="text-surface-400 text-sm mt-2">Average Rating</p></div>
+              <div class="reveal"><p class="text-3xl md:text-4xl font-bold gradient-navy">Free</p><p class="text-surface-400 text-sm mt-2">Shipping $50+</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="py-24 md:py-32">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-subtle mb-4">
+                <span class="text-xs font-medium text-surface-500 uppercase tracking-wider">Curated Selection</span>
+              </div>
+              <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-surface-900">Featured <span class="gradient-gold">Products</span></h2>
+              <p class="text-surface-500 max-w-xl mx-auto">Our most-loved grooming essentials, handpicked for the discerning man.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              ${featured.map(p => renderProductCard(p)).join('')}
+            </div>
+            <div class="text-center mt-16 reveal">
+              <a href="#/products" onclick="navigate('products')" class="liquid-btn text-white px-8 py-4 rounded-2xl font-medium inline-flex items-center gap-3">
+                View All Products
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="py-24 md:py-32 bg-surface-50">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+              <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-surface-900">Shop by <span class="gradient-navy">Category</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              ${[
+                {name:'Colognes',desc:'Signature scents for every occasion',cat:'cologne',img:'https://images.unsplash.com/photo-1594035910387-fea081e65e42?w=600&h=400&fit=crop'},
+                {name:'Hair Care',desc:'Style and nourish your hair',cat:'hair',img:'https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=600&h=400&fit=crop'},
+                {name:'Body & Face',desc:'Oils, balms, and skincare',cat:'body',img:'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=400&fit=crop'}
+              ].map((c,i) => `
+                <div class="reveal-scale group cursor-pointer" onclick="navigate('products',{cat:'${c.cat}'})" style="transition-delay:${i*100}ms">
+                  <div class="liquid-card rounded-3xl overflow-hidden">
+                    <div class="aspect-[3/2] overflow-hidden img-zoom">
+                      <img src="${c.img}" class="w-full h-full object-cover" alt="${c.name}" loading="lazy">
+                    </div>
+                    <div class="p-8">
+                      <h3 class="font-serif text-xl font-bold text-surface-900 mb-2">${c.name}</h3>
+                      <p class="text-surface-500 text-sm mb-4">${c.desc}</p>
+                      <span class="inline-flex items-center gap-2 text-accent text-sm font-medium group-hover:gap-3 transition-all">Shop Now <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+                    </div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- Featured Blog -->
+        <section class="py-24 md:py-32">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 reveal">
+              <div>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-subtle mb-4">
+                  <span class="text-xs font-medium text-surface-500 uppercase tracking-wider">The Journal</span>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-surface-900">Grooming <span class="gradient-gold">Insights</span></h2>
+              </div>
+              <a href="#/blog" onclick="navigate('blog')" class="btn btn-outline border-surface-200 text-surface-600 hover:border-surface-400 rounded-xl mt-4 md:mt-0">All Articles →</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              ${blogPosts.slice(0, 3).map(post => `
+                <a href="#/article/${post.id}" onclick="navigate('article',{id:${post.id}})" class="group block reveal">
+                  <div class="liquid-card rounded-3xl overflow-hidden h-full flex flex-col">
+                    <div class="aspect-[3/2] overflow-hidden img-zoom">
+                      <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                      <div class="flex items-center gap-3 mb-3">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold uppercase bg-surface-100 text-surface-600">${post.category}</span>
+                        <span class="text-surface-400 text-xs">${post.readTime}</span>
+                      </div>
+                      <h3 class="font-serif text-lg font-bold text-surface-900 group-hover:text-accent transition mb-2 flex-1">${post.title}</h3>
+                      <p class="text-surface-500 text-sm line-clamp-2 mb-3">${post.excerpt}</p>
+                      <div class="flex items-center gap-2 text-surface-400 text-xs pt-3 border-t border-surface-100">
+                        <span>${post.author}</span><span>•</span><span>${new Date(post.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- Newsletter CTA -->
+        <section class="py-24 md:py-32 bg-surface-900 relative overflow-hidden">
+          <div class="absolute inset-0">
+            <div class="absolute top-10 right-10 w-64 h-64 bg-accent/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 left-10 w-48 h-48 bg-accent-gold/10 rounded-full blur-3xl"></div>
+          </div>
+          <div class="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="font-serif text-3xl md:text-5xl font-bold mb-4 text-white">Join the <span class="gradient-gold">Inner Circle</span></h2>
+            <p class="text-white/50 mb-8 max-w-lg mx-auto">Get exclusive access to new products, grooming tips, and special offers.</p>
+            <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input type="email" placeholder="Enter your email" required class="input input-lg bg-white/10 border-white/20 text-white placeholder-white/40 rounded-2xl focus:border-accent-gold/50 flex-1">
+              <button type="submit" class="liquid-btn liquid-btn-gold text-white rounded-2xl px-8">Subscribe</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- Trust Badges -->
+        <section class="py-16 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              ${[
+                {icon:'🚚',title:'Free Shipping',sub:'On orders over $50'},
+                {icon:'🔒',title:'Secure Checkout',sub:'256-bit SSL encryption'},
+                {icon:'↩️',title:'30-Day Returns',sub:'Hassle-free returns'},
+                {icon:'🌿',title:'Natural Products',sub:'100% natural ingredients'}
+              ].map((b,i) => `
+                <div class="reveal" style="transition-delay:${i*100}ms">
+                  <div class="text-3xl mb-3">${b.icon}</div>
+                  <h4 class="font-semibold text-sm text-surface-800">${b.title}</h4>
+                  <p class="text-surface-400 text-xs mt-1">${b.sub}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    // ==================== PRODUCTS PAGE ====================
+    function renderProducts(category = 'all') {
+      const filtered = category === 'all' ? products : products.filter(p => p.cat === category);
+      const cats = [{key:'all',label:'All'},{key:'cologne',label:'Colognes'},{key:'hair',label:'Hair Care'},{key:'body',label:'Body Care'},{key:'face',label:'Face Care'}];
+      return `
+        <div class="pt-28 md:pt-36 pb-24 min-h-screen page-in">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+              <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-surface-900">${category === 'all' ? 'All' : cats.find(c=>c.key===category)?.label || category} <span class="gradient-navy">Products</span></h1>
+              <p class="text-surface-500 max-w-lg mx-auto">Discover our complete range of premium grooming essentials.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3 mb-16 reveal">
+              ${cats.map(c => `
+                <button onclick="navigate('products',{cat:'${c.key}'})" class="btn btn-sm ${category===c.key?'liquid-btn text-white border-none':'btn-ghost text-surface-500 hover:text-surface-900'} rounded-xl font-medium">
+                  ${c.label}
+                </button>
+              `).join('')}
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              ${filtered.map(p => renderProductCard(p)).join('')}
+            </div>
+            ${filtered.length === 0 ? '<p class="text-center text-surface-400 py-16">No products found in this category.</p>' : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== PRODUCT DETAIL ====================
+    function renderProductDetail(id) {
+      const p = products.find(pr => pr.id === id);
+      if (!p) return render404();
+      const related = products.filter(pr => pr.cat === p.cat && pr.id !== p.id).slice(0, 3);
+      return `
+        <div class="pt-28 md:pt-36 pb-24 min-h-screen page-in">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="breadcrumbs text-sm mb-8 text-surface-400 reveal">
+              <ul>
+                <li><a href="#/" onclick="navigate('home')" class="hover:text-surface-900 transition">Home</a></li>
+                <li><a href="#/products" onclick="navigate('products')" class="hover:text-surface-900 transition">Products</a></li>
+                <li class="text-surface-700">${p.name}</li>
+              </ul>
+            </nav>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-24">
+              <div class="reveal-left">
+                <div class="liquid-product relative rounded-3xl overflow-hidden aspect-square">
+                  <div class="bg-gradient-to-b from-surface-50 to-white h-full">
+                    <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover p-8 mix-blend-multiply">
+                  </div>
+                </div>
+              </div>
+              <div class="reveal-right flex flex-col justify-center">
+                <div class="flex gap-2 mb-4">
+                  ${p.badges.map(b => `<span class="inline-flex items-center px-3 py-1.5 rounded-xl text-xs font-semibold uppercase bg-surface-100 text-surface-600">${b}</span>`).join('')}
+                </div>
+                <p class="text-xs uppercase tracking-widest text-surface-400 mb-2">${p.cat}</p>
+                <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-surface-900 mb-4">${p.name}</h1>
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="flex text-accent-gold">${'★'.repeat(Math.floor(p.rating))}</div>
+                  <span class="text-surface-400 text-sm">${p.rating} (${p.reviews} reviews)</span>
+                </div>
+                <p class="text-4xl font-bold gradient-navy mb-6">$${p.price}</p>
+                <p class="text-surface-600 leading-relaxed mb-8">${p.longDesc}</p>
+                <div class="flex gap-4 mb-8">
+                  <button onclick="addToCart(${p.id})" class="liquid-btn text-white px-8 py-4 rounded-2xl text-base font-medium flex items-center gap-3 flex-1 justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                    Add to Cart
+                  </button>
+                  <button onclick="shareProduct(${p.id})" class="btn btn-outline border-surface-200 hover:border-surface-400 text-surface-600 rounded-2xl px-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+                  </button>
+                </div>
+                <div class="space-y-4">
+                  <h4 class="font-semibold text-surface-800">Key Features</h4>
+                  <ul class="space-y-2">
+                    ${p.features.map(f => `<li class="flex items-center gap-3 text-surface-600 text-sm"><svg class="w-4 h-4 text-accent-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>${f}</li>`).join('')}
+                  </ul>
+                </div>
+                <div class="mt-8 p-6 rounded-2xl liquid-glass">
+                  <h4 class="font-semibold text-surface-800 text-sm mb-2">Ingredients</h4>
+                  <p class="text-surface-500 text-xs leading-relaxed">${p.ingredients}</p>
+                </div>
+              </div>
+            </div>
+            ${related.length > 0 ? `
+              <div class="border-t border-surface-100 pt-16 reveal">
+                <h3 class="font-serif text-2xl font-bold text-surface-900 mb-8">You May Also <span class="gradient-gold">Like</span></h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                  ${related.map(rp => renderProductCard(rp)).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== BLOG PAGE ====================
+    function renderBlog(page = 1) {
+      const perPage = 3;
+      const totalPages = Math.ceil(blogPosts.length / perPage);
+      const start = (page - 1) * perPage;
+      const pagePosts = blogPosts.slice(start, start + perPage);
+      return `
+        <div class="pt-28 md:pt-36 pb-24 min-h-screen page-in">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-subtle mb-4">
+                <span class="text-xs font-medium text-surface-500 uppercase tracking-wider">The Journal</span>
+              </div>
+              <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-surface-900">Grooming <span class="gradient-gold">Insights</span></h1>
+              <p class="text-surface-500 max-w-xl mx-auto">Expert tips, product guides, and lifestyle content for the modern man.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              ${pagePosts.map(post => `
+                <a href="#/article/${post.id}" onclick="navigate('article',{id:${post.id}})" class="group block reveal">
+                  <div class="liquid-card rounded-3xl overflow-hidden h-full flex flex-col">
+                    <div class="aspect-[3/2] overflow-hidden img-zoom">
+                      <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                      <div class="flex items-center gap-3 mb-3">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold uppercase bg-surface-100 text-surface-600">${post.category}</span>
+                        <span class="text-surface-400 text-xs">${post.readTime}</span>
+                      </div>
+                      <h3 class="font-serif text-lg font-bold text-surface-900 group-hover:text-accent transition mb-2 flex-1">${post.title}</h3>
+                      <p class="text-surface-500 text-sm line-clamp-2 mb-3">${post.excerpt}</p>
+                      <div class="flex items-center gap-2 text-surface-400 text-xs pt-3 border-t border-surface-100">
+                        <span>${post.author}</span><span>•</span><span>${new Date(post.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              `).join('')}
+            </div>
+            ${totalPages > 1 ? `
+              <div class="flex items-center justify-center gap-3 reveal">
+                <button onclick="navigate('blog',{page:${Math.max(1,page-1)}})" class="btn btn-sm ${page===1?'btn-disabled':'btn-outline border-surface-200 text-surface-600 hover:border-surface-400'} rounded-xl">← Prev</button>
+                ${Array.from({length:totalPages},(_,i)=>`<button onclick="navigate('blog',{page:${i+1}})" class="btn btn-sm ${page===i+1?'liquid-btn text-white border-none':'btn-outline border-surface-200 text-surface-500'} rounded-xl">${i+1}</button>`).join('')}
+                <button onclick="navigate('blog',{page:${Math.min(totalPages,page+1)}})" class="btn btn-sm ${page===totalPages?'btn-disabled':'btn-outline border-surface-200 text-surface-600 hover:border-surface-400'} rounded-xl">Next →</button>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== ARTICLE PAGE ====================
+    function renderArticle(id) {
+      const post = blogPosts.find(p => p.id === id);
+      if (!post) return render404();
+      const idx = blogPosts.findIndex(p => p.id === id);
+      const prev = idx > 0 ? blogPosts[idx-1] : null;
+      const next = idx < blogPosts.length-1 ? blogPosts[idx+1] : null;
+      const url = window.location.href;
+      return `
+        <div class="pt-28 md:pt-36 pb-24 min-h-screen page-in">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="breadcrumbs text-sm mb-8 text-surface-400 reveal">
+              <ul>
+                <li><a href="#/" onclick="navigate('home')" class="hover:text-surface-900 transition">Home</a></li>
+                <li><a href="#/blog" onclick="navigate('blog')" class="hover:text-surface-900 transition">Journal</a></li>
+                <li class="text-surface-700">${post.title.substring(0,30)}...</li>
+              </ul>
+            </nav>
+            <div class="reveal">
+              <div class="relative overflow-hidden rounded-3xl aspect-[2/1] mb-8 img-zoom liquid-card">
+                <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover">
+              </div>
+              <div class="flex items-center gap-4 mb-6">
+                <span class="inline-flex items-center px-3 py-1.5 rounded-xl text-xs font-semibold uppercase bg-surface-100 text-surface-600">${post.category}</span>
+                <span class="text-surface-400 text-sm">${post.readTime} read</span>
+              </div>
+              <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-surface-900 mb-6 leading-tight">${post.title}</h1>
+              <div class="flex items-center justify-between pb-8 border-b border-surface-100 mb-10">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center text-white font-bold">${post.author.charAt(0)}</div>
+                  <div>
+                    <p class="font-medium text-surface-900">${post.author}</p>
+                    <p class="text-surface-400 text-sm">${new Date(post.date).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-surface-400 text-xs mr-1 hidden sm:inline">Share:</span>
+                  <button onclick="shareArticle(${post.id})" class="btn btn-sm btn-ghost text-surface-400 hover:text-accent-gold rounded-xl" title="Copy Link">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+                  </button>
+                  <button onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(url)}')" class="btn btn-sm btn-ghost text-surface-400 hover:text-accent-gold rounded-xl" title="Twitter">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                  </button>
+                  <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}')" class="btn btn-sm btn-ghost text-surface-400 hover:text-accent-gold rounded-xl" title="Facebook">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="article-content">
+                ${post.content}
+              </div>
+              <div class="my-12 reveal">
+                <div class="relative rounded-3xl overflow-hidden aspect-video bg-surface-100 liquid-card">
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-3xl" loading="lazy"></iframe>
+                </div>
+                <p class="text-center text-surface-400 text-sm mt-3">Watch: Master Your Grooming Routine</p>
+              </div>
+            </div>
+            ${(prev||next) ? `
+              <div class="border-t border-surface-100 pt-12 mt-12 reveal">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  ${prev ? `<a href="#/article/${prev.id}" onclick="navigate('article',{id:${prev.id}})" class="group block liquid-card rounded-3xl p-6"><p class="text-surface-400 text-xs mb-2">← Previous Article</p><h4 class="font-serif text-lg font-bold text-surface-900 group-hover:text-accent transition">${prev.title}</h4></a>` : '<div></div>'}
+                  ${next ? `<a href="#/article/${next.id}" onclick="navigate('article',{id:${next.id}})" class="group block liquid-card rounded-3xl p-6"><p class="text-surface-400 text-xs mb-2">Next Article →</p><h4 class="font-serif text-lg font-bold text-surface-900 group-hover:text-accent transition">${next.title}</h4></a>` : '<div></div>'}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== CONTACT PAGE ====================
+    function renderContact() {
+      return `
+        <div class="pt-28 md:pt-36 pb-24 min-h-screen page-in">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+              <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-surface-900">Get in <span class="gradient-navy">Touch</span></h1>
+              <p class="text-surface-500 max-w-lg mx-auto">Have questions about our products or need grooming advice? We'd love to hear from you.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+              <div class="reveal-left space-y-8">
+                ${[
+                  {icon:'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',title:'Email',detail:'hello@forma-grooming.com',grad:'from-amber-50 to-amber-100/50',border:'border-amber-200/50'},
+                  {icon:'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',title:'Address',detail:'123 Grooming Lane<br>New York, NY 10001',grad:'from-blue-50 to-blue-100/50',border:'border-blue-200/50'},
+                  {icon:'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z',title:'Phone',detail:'+1 (555) 123-4567',grad:'from-emerald-50 to-emerald-100/50',border:'border-emerald-200/50'}
+                ].map(c => `
+                  <div class="flex items-start gap-5">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br ${c.grad} border ${c.border} flex items-center justify-center flex-shrink-0">
+                      <svg class="w-6 h-6 text-surface-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="${c.icon}"/></svg>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-surface-900 mb-1">${c.title}</h4>
+                      <p class="text-surface-500 text-sm">${c.detail}</p>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="reveal-right">
+                <form id="contactForm" onsubmit="handleContactForm(event)" class="liquid-card rounded-3xl p-8">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                    <div>
+                      <label class="block text-xs font-medium text-surface-500 mb-2 uppercase tracking-wider">First Name</label>
+                      <input type="text" name="firstName" required class="input input-bordered bg-white border-surface-200 text-surface-900 rounded-xl w-full focus:border-accent transition">
+                    </div>
+                    <div>
+                      <label class="block text-xs font-medium text-surface-500 mb-2 uppercase tracking-wider">Last Name</label>
+                      <input type="text" name="lastName" required class="input input-bordered bg-white border-surface-200 text-surface-900 rounded-xl w-full focus:border-accent transition">
+                    </div>
+                  </div>
+                  <div class="mb-5">
+                    <label class="block text-xs font-medium text-surface-500 mb-2 uppercase tracking-wider">Email</label>
+                    <input type="email" name="email" required class="input input-bordered bg-white border-surface-200 text-surface-900 rounded-xl w-full focus:border-accent transition">
+                  </div>
+                  <div class="mb-5">
+                    <label class="block text-xs font-medium text-surface-500 mb-2 uppercase tracking-wider">Subject</label>
+                    <select name="subject" class="select select-bordered bg-white border-surface-200 text-surface-900 rounded-xl w-full focus:border-accent transition">
+                      <option>General Inquiry</option>
+                      <option>Product Question</option>
+                      <option>Order Support</option>
+                      <option>Wholesale</option>
+                      <option>Partnership</option>
+                    </select>
+                  </div>
+                  <div class="mb-6">
+                    <label class="block text-xs font-medium text-surface-500 mb-2 uppercase tracking-wider">Message</label>
+                    <textarea name="message" rows="5" required class="textarea textarea-bordered bg-white border-surface-200 text-surface-900 rounded-xl w-full focus:border-accent transition resize-none"></textarea>
+                  </div>
+                  <button type="submit" id="contactSubmit" class="liquid-btn text-white rounded-2xl w-full text-base flex items-center justify-center gap-2">
+                    <span id="contactBtnText">Send Message</span>
+                    <span id="contactSpinner" class="loader hidden"></span>
+                  </button>
+                  <div id="contactStatus" class="mt-4 text-center text-sm hidden"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== ABOUT PAGE ====================
+    function renderAbout() {
+      return `
+        <div class="pt-28 md:pt-36 pb-24 min-h-screen page-in">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-subtle mb-4">
+                <span class="text-xs font-medium text-surface-500 uppercase tracking-wider">Our Story</span>
+              </div>
+              <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-surface-900">About <span class="gradient-navy">FORMA</span></h1>
+              <p class="text-surface-500 max-w-2xl mx-auto text-lg">Born from a simple belief: every man deserves access to premium grooming products that actually work.</p>
+            </div>
+            <div class="space-y-8">
+              <div class="reveal liquid-card rounded-3xl p-8">
+                <h2 class="font-serif text-2xl font-bold text-surface-900 mb-4">Our Mission</h2>
+                <p class="text-surface-600 leading-relaxed mb-4">FORMA was founded in 2020 with a clear mission: to create grooming products that combine natural ingredients with sophisticated design. We believe that taking care of your appearance isn't about vanity — it's about self-respect.</p>
+                <blockquote>"We don't just sell products. We provide the tools for men to feel confident, composed, and ready to take on whatever the day brings."</blockquote>
+              </div>
+              <div class="reveal liquid-card rounded-3xl p-8">
+                <h2 class="font-serif text-2xl font-bold text-surface-900 mb-4">Our Philosophy</h2>
+                <p class="text-surface-600 leading-relaxed">Every FORMA product is developed with three core principles in mind:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+                  ${[
+                    {icon:'🌿',title:'Natural First',desc:'100% natural ingredients, never compromising on quality.',grad:'from-amber-50 to-amber-100/50',border:'border-amber-200/50'},
+                    {icon:'✨',title:'Thoughtful Design',desc:'Premium packaging — minimalist, elegant, and sustainable.',grad:'from-blue-50 to-blue-100/50',border:'border-blue-200/50'},
+                    {icon:'🔬',title:'Proven Results',desc:'Rigorous testing ensures real, noticeable results.',grad:'from-emerald-50 to-emerald-100/50',border:'border-emerald-200/50'}
+                  ].map((c,i) => `
+                    <div class="p-6 rounded-2xl bg-gradient-to-br ${c.grad} border ${c.border}">
+                      <div class="text-2xl mb-3">${c.icon}</div>
+                      <h4 class="font-semibold text-surface-900 mb-2">${c.title}</h4>
+                      <p class="text-surface-500 text-sm">${c.desc}</p>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+              <div class="reveal liquid-card rounded-3xl p-8">
+                <h2 class="font-serif text-2xl font-bold text-surface-900 mb-4">The Team</h2>
+                <p class="text-surface-600 leading-relaxed">Our team brings together expertise in dermatology, fragrance development, and design. Each product undergoes rigorous testing and refinement before it reaches your bathroom shelf.</p>
+                <p class="text-surface-600 leading-relaxed mt-4">Based in New York City, we're a small but passionate team dedicated to elevating the men's grooming experience worldwide.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== PRIVACY PAGE ====================
+    function renderPrivacy() {
+      const sections = [
+        {title:'1. Introduction',content:'FORMA ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website forma-grooming.com (the "Site"). Please read this privacy policy carefully. If you do not agree with the terms, please do not access the site.'},
+        {title:'2. Information We Collect',content:'We collect information that you provide directly to us, including: Name and email address when you create an account or subscribe to our newsletter; Shipping and billing information when you make a purchase; Messages and inquiries when you contact us; Payment information (processed securely through our payment providers). We also automatically collect certain information when you visit the Site, including your IP address, browser type, operating system, and browsing behavior.'},
+        {title:'3. How We Use Your Information',content:'We use the information we collect for the following purposes: To process and fulfill your orders; To communicate with you about your orders, products, and services; To send you marketing communications (with your consent); To improve our Site and product offerings; To prevent fraud and ensure the security of our Site.'},
+        {title:'4. Information Sharing',content:'We do not sell, trade, or rent your personal information to third parties. We may share your information with: Service providers who assist us in operating our business (shipping, payment processing, etc.); Legal authorities when required by law.'},
+        {title:'5. Cookies',content:'We use cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and understand where our visitors come from. You can control cookies through your browser settings.'},
+        {title:'6. Your Rights',content:'You have the right to: Access the personal information we hold about you; Request correction of inaccurate information; Request deletion of your personal information; Opt out of marketing communications; Data portability.'},
+        {title:'7. Security',content:'We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the Internet is 100% secure.'},
+        {title:'8. Contact Us',content:'If you have questions about this Privacy Policy, please contact us at: Email: privacy@forma-grooming.com<br>Address: 123 Grooming Lane, New York, NY 10001'}
+      ];
+      return `
+        <div class="pt-28 md:pt-36 pb-24 min-h-screen page-in">
+          <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-subtle mb-6">
+                <span class="text-xs font-medium text-surface-500 uppercase tracking-wider">Legal</span>
+              </div>
+              <h1 class="font-serif text-4xl md:text-5xl font-bold text-surface-900 mb-4">Privacy <span class="gradient-navy">Policy</span></h1>
+              <p class="text-surface-400 text-sm mb-12">Last updated: January 1, 2024</p>
+              <div class="space-y-6">
+                ${sections.map(s => `
+                  <div class="liquid-card rounded-2xl p-6">
+                    <h2 class="font-semibold text-lg text-surface-900 mb-3">${s.title}</h2>
+                    <p class="text-surface-600 leading-relaxed text-sm">${s.content}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== CART PAGE ====================
+    function renderCart() {
+      if (cart.length === 0) {
+        return `
+          <div class="pt-28 md:pt-36 pb-24 min-h-screen flex items-center justify-center page-in">
+            <div class="text-center reveal">
+              <div class="w-24 h-24 mx-auto rounded-3xl liquid-glass flex items-center justify-center mb-6">
+                <svg class="w-10 h-10 text-surface-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              </div>
+              <h1 class="font-serif text-3xl font-bold text-surface-900 mb-3">Your Cart is Empty</h1>
+              <p class="text-surface-500 mb-8">Looks like you haven't added any products yet.</p>
+              <a href="#/products" onclick="navigate('products')" class="liquid-btn text-white px-8 py-4 rounded-2xl">Start Shopping</a>
+            </div>
+          </div>
+        `;
+      }
+      const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      const shipping = subtotal >= 50 ? 0 : 5.99;
+      const total = subtotal + shipping;
+      return `
+        <div class="pt-28 md:pt-36 pb-24 min-h-screen page-in">
+          <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="font-serif text-3xl md:text-4xl font-bold text-surface-900 mb-8 reveal">Shopping Cart <span class="text-surface-400">(${cart.length})</span></h1>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div class="lg:col-span-2 space-y-4 reveal-left">
+                ${cart.map((item, idx) => `
+                  <div class="liquid-card rounded-2xl p-6 flex flex-col sm:flex-row gap-6">
+                    <div class="w-28 h-28 bg-surface-50 rounded-xl overflow-hidden flex-shrink-0 img-zoom">
+                      <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover mix-blend-multiply p-3">
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex justify-between mb-2">
+                        <h3 class="font-semibold text-surface-900">${item.name}</h3>
+                        <button onclick="removeFromCart(${idx})" class="text-surface-300 hover:text-red-500 transition p-1">
+                          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                        </button>
+                      </div>
+                      <p class="text-surface-400 text-sm mb-4">${item.cat}</p>
+                      <div class="flex items-center justify-between">
+                        <div class="join">
+                          <button onclick="updateQty(${idx},${item.qty-1})" class="join-item btn btn-sm btn-ghost text-surface-500 hover:text-surface-900 rounded-l-xl border border-surface-200">−</button>
+                          <button class="join-item btn btn-sm btn-disabled bg-surface-50 border border-surface-200 text-surface-900 w-10">${item.qty}</button>
+                          <button onclick="updateQty(${idx},${item.qty+1})" class="join-item btn btn-sm btn-ghost text-surface-500 hover:text-surface-900 rounded-r-xl border border-surface-200">+</button>
+                        </div>
+                        <p class="font-bold text-xl gradient-navy">$${(item.price * item.qty).toFixed(2)}</p>
+                      </div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="reveal-right">
+                <div class="liquid-card rounded-3xl p-6 sticky top-28">
+                  <h3 class="font-semibold text-surface-900 mb-6">Order Summary</h3>
+                  <div class="space-y-3 mb-6">
+                    <div class="flex justify-between text-sm"><span class="text-surface-500">Subtotal</span><span class="text-surface-900">$${subtotal.toFixed(2)}</span></div>
+                    <div class="flex justify-between text-sm"><span class="text-surface-500">Shipping</span><span class="text-surface-900">${shipping === 0 ? '<span class="text-emerald-600 font-medium">Free</span>' : '$' + shipping.toFixed(2)}</span></div>
+                    <div class="divider my-2"></div>
+                    <div class="flex justify-between"><span class="font-semibold text-surface-900">Total</span><span class="font-bold text-2xl gradient-navy">$${total.toFixed(2)}</span></div>
+                  </div>
+                  ${shipping > 0 ? `<div class="alert bg-blue-50 border-blue-100 rounded-xl mb-4 py-3"><span class="text-xs text-blue-700">Free shipping on orders over $50. Add $${(50-subtotal).toFixed(2)} more.</span></div>` : ''}
+                  <button onclick="showToast('✓ Checkout coming soon!')" class="liquid-btn text-white rounded-2xl w-full text-base">Checkout</button>
+                  <p class="text-center text-surface-400 text-xs mt-4">Secure checkout powered by Stripe</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== 404 PAGE ====================
+    function render404() {
+      return `
+        <div class="pt-28 md:pt-36 pb-24 min-h-screen flex items-center justify-center page-in">
+          <div class="text-center reveal">
+            <div class="relative mb-8">
+              <p class="text-[120px] md:text-[180px] font-bold gradient-gold leading-none select-none">404</p>
+            </div>
+            <h1 class="font-serif text-3xl font-bold text-surface-900 mb-4">Page Not Found</h1>
+            <p class="text-surface-500 mb-8 max-w-md mx-auto">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#/" onclick="navigate('home')" class="liquid-btn text-white px-8 py-4 rounded-2xl">Go Home</a>
+              <a href="#/products" onclick="navigate('products')" class="btn btn-outline border-surface-200 text-surface-600 hover:border-surface-400 rounded-2xl">Browse Products</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== CART FUNCTIONS ====================
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+      const existing = cart.find(item => item.id === productId);
+      if (existing) { existing.qty++; } else { cart.push({ ...product, qty: 1 }); }
+      updateCartBadge();
+      showToast(`${product.name} added to cart!`);
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartBadge();
+      navigate('cart');
+    }
+
+    function updateQty(index, newQty) {
+      if (newQty <= 0) { removeFromCart(index); return; }
+      cart[index].qty = newQty;
+      navigate('cart');
+    }
+
+    function updateCartBadge() {
+      const badge = document.getElementById('cartCount');
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      if (totalItems > 0) { badge.textContent = totalItems; badge.classList.remove('hidden'); } else { badge.classList.add('hidden'); }
+    }
+
+    // ==================== FORM HANDLERS ====================
+    function handleContactForm(e) {
+      e.preventDefault();
+      const btnText = document.getElementById('contactBtnText');
+      const spinner = document.getElementById('contactSpinner');
+      const status = document.getElementById('contactStatus');
+      btnText.textContent = 'Sending...';
+      spinner.classList.remove('hidden');
+      setTimeout(() => {
+        btnText.textContent = '✓ Message Sent!';
+        spinner.classList.add('hidden');
+        status.innerHTML = '<span class="text-emerald-600">Thank you! We\'ll get back to you within 24 hours.</span>';
+        status.classList.remove('hidden');
+        e.target.reset();
+        setTimeout(() => {
+          btnText.textContent = 'Send Message';
+          status.classList.add('hidden');
+        }, 4000);
+      }, 1500);
+    }
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      showToast('Subscribed successfully!');
+      e.target.reset();
+    }
+
+    // ==================== SHARING ====================
+    function shareProduct(id) {
+      const product = products.find(p => p.id === id);
+      if (navigator.share) { navigator.share({ title: product.name, text: `Check out ${product.name} from FORMA - $${product.price}`, url: window.location.href }); }
+      else { navigator.clipboard.writeText(window.location.href); showToast('Link copied to clipboard!'); }
+    }
+
+    function shareArticle(id) {
+      const post = blogPosts.find(p => p.id === id);
+      if (navigator.share) { navigator.share({ title: post.title, text: post.excerpt, url: window.location.href }); }
+      else { navigator.clipboard.writeText(window.location.href); showToast('Link copied to clipboard!'); }
+    }
+
+    // ==================== MOBILE MENU ====================
+    function openMobileMenu() {
+      document.getElementById('mobileMenu').classList.add('open');
+      const overlay = document.getElementById('mobileOverlay');
+      overlay.classList.remove('hidden');
+      requestAnimationFrame(() => overlay.classList.remove('opacity-0'));
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      const overlay = document.getElementById('mobileOverlay');
+      overlay.classList.add('opacity-0');
+      setTimeout(() => overlay.classList.add('hidden'), 300);
+      document.body.style.overflow = '';
+    }
+
+    // ==================== SCROLL ANIMATIONS ====================
+    function initScrollAnimations() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => observer.observe(el));
+    }
+
+    // ==================== HEADER SCROLL ====================
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('liquid-glass-subtle','shadow-lg');
+      } else {
+        header.classList.remove('liquid-glass-subtle','shadow-lg');
+      }
+    });
+
+    // ==================== TOAST ====================
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    // ==================== ROUTER ====================
+    function handleRoute() {
+      const hash = window.location.hash.slice(1) || '/';
+      const parts = hash.split('/').filter(Boolean);
+      if (parts.length === 0 || parts[0] === '') { navigate('home'); }
+      else if (parts[0] === 'products') { const cat = new URLSearchParams(window.location.hash.split('?')[1]||'').get('cat')||'all'; navigate('products',{cat}); }
+      else if (parts[0] === 'product' && parts[1]) { navigate('product',{id:parseInt(parts[1])}); }
+      else if (parts[0] === 'blog') { const params = new URLSearchParams(window.location.hash.split('?')[1]||''); navigate('blog',{page:parseInt(params.get('page'))||1}); }
+      else if (parts[0] === 'article' && parts[1]) { navigate('article',{id:parseInt(parts[1])}); }
+      else if (parts[0] === 'contact') { navigate('contact'); }
+      else if (parts[0] === 'about') { navigate('about'); }
+      else if (parts[0] === 'privacy') { navigate('privacy'); }
+      else if (parts[0] === 'cart') { navigate('cart'); }
+      else { navigate('404'); }
+    }
+
+    window.addEventListener('hashchange', handleRoute);
+    window.addEventListener('load', () => { handleRoute(); updateCartBadge(); });
+  </script>
+</body>
+</html>
+
